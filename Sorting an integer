@@ -1,0 +1,23 @@
+# Seriously difficult to do this in Python considering the simplicity of the task. Python makes it very easy to sort a list or a tuple but not single number.
+# However, this code will do it for you
+
+def sort_descending(n):
+    return int(''.join(sorted(str(n), reverse = True)))
+    
+# Involves converting to a string value, sorting and reversing the string, then joining it into an empty string and finally convert to an int!
+
+def sort_descending(n): # as Tuple and List
+    list_ = sorted(list(str(n)))
+    list_.reverse()
+    return int(''.join(tuple(list_)))
+    
+def sort_ascending(n): # Long winded way to do it
+    list_of_numbers = []
+    for i in str(n):
+        list_of_numbers.append(i)
+    list_of_numbers.sort()
+    list_of_numbers.reverse()
+    string = ""
+    for i in list_of_numbers:
+        string = string + str(i)
+    return int(string)

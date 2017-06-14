@@ -1,0 +1,18 @@
+# This is fairly easy to do and can be done for string values with whitespace between:
+
+def name_inverter(str_): # Function to resort the names
+    return ' '.join(reversed(str_.split(' ')))
+    
+# With a comma seperation:
+
+def name_inverter(str_): # Function to resort the names
+    return ', '.join(reversed(str_.split(' ')))
+    
+# or you can easily reverse a list using the .reverse() method. Everything in Python is geared towards manipulation of larger structures which is why
+# list manipulation is much easier
+
+def list_reverser(L):
+    return L.reverse()
+    
+list = [1,2,3]
+list_reverser(list)

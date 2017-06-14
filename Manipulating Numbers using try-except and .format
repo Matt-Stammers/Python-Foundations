@@ -1,0 +1,17 @@
+# This one is also tricky in Python - once again conversion to a string will work to manipulate a number
+
+def no_boring_zeros(n):
+    try:
+        result = int(str(n).rstrip("0"))
+        return result
+    except:
+        return 0
+
+#Another way to achieve this, say for a phone number to strip out the zero's is:
+
+In [11]: s = '07123456789'
+
+In [12]: '44{}'.format(s[1:] if s.startswith('0') else s)
+Out[12]: '447123456789'
+
+#This one was taken from stack overflow thanks to vaultah

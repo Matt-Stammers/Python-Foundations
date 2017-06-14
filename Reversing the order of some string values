@@ -3,6 +3,11 @@
 def name_inverter(str_): # Function to resort the names
     return ' '.join(reversed(str_.split(' ')))
     
+# or another way of putting it:
+    
+def name_inverter(str_):
+    return ' '.join(str_.split(' ')[::-1])
+    
 # With a comma seperation:
 
 def name_inverter(str_): # Function to resort the names

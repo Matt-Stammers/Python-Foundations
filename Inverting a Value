@@ -1,0 +1,7 @@
+#There are two very simple ways to create a basic function in order to invert a int/float value
+
+def invert(number): # option 1, - sign
+    return - number
+
+def invert(number): # option 2, multiply by -1
+    return number * -1

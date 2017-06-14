@@ -1,0 +1,22 @@
+# This one is very easy to achieve with .swapcase()
+
+def case_alternator(string):
+    return string.swapcase()
+
+# or it can be done as a for loop
+
+test = "SwaPPeR"
+
+def case_alternator(string):
+    words = list(string)
+    for word in words:
+        if word.isupper() == True:
+            return word.lower()
+        else:
+            return word.upper()  
+
+print(case_alternator(test))
+
+# or as a list expression
+def to_alternating_case(string):
+    return ''.join([c.upper() if c.islower() else c.lower() for c in string])

@@ -11,7 +11,7 @@ def sort_descending(n): # as Tuple and List
     list_.reverse()
     return int(''.join(tuple(list_)))
     
-def sort_ascending(n): # Long winded way to do it
+def sort_descending(n): # Long winded way to do it
     list_of_numbers = []
     for i in str(n):
         list_of_numbers.append(i)
@@ -22,7 +22,7 @@ def sort_ascending(n): # Long winded way to do it
         string = string + str(i)
     return int(string)
 
-def super_size(n): #another way to reverse a value
+def sort_descending(n): #another way to reverse a value
     l = list(str(n))
     l.sort()
     return int( "".join( l[::-1] ) )

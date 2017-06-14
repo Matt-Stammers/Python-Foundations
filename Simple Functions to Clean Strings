@@ -1,0 +1,33 @@
+# This funciton will remove numbers from a string. It does this by using a list expression to iterate through the string removing all digits
+
+def string_cleaner(s): 
+    """
+    Function will return the cleaned string
+    """
+    result = ''.join([i for i in s if not i.isdigit()])
+    return result
+    
+string_cleaner('afad20ja7sdf')
+
+# The opposite affect can be achieved by removing the not clause - then one will JUST get the digits.
+
+def string_cleaner(s): 
+    """
+    Function will return the cleaned string
+    """
+    result = ''.join([i for i in s if i.isdigit()])
+    return result
+    
+string_cleaner('afad20ja7sdf')
+
+# By using regex expressions various different types of cleaning can be performed. The one below will return 'aaa'.
+
+import re
+def string_clean(s):
+    """
+    Function will return the cleaned string
+    """
+    result = ''.join([i for i in s if i is r'a'])
+    return result
+    
+string_clean('afad20ja3sdf')

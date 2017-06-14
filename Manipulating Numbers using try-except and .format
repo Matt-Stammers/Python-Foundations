@@ -1,6 +1,6 @@
 # This one is also tricky in Python - once again conversion to a string will work to manipulate a number
 
-def no_boring_zeros(n):
+def remove_zero_end(n):
     try:
         result = int(str(n).rstrip("0"))
         return result

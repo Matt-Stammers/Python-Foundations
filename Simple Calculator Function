@@ -1,0 +1,31 @@
+#1) Using operator library
+
+import operator 
+def get_operator_fn(op):
+    return {
+        '+' : operator.add,
+        '-' : operator.sub,
+        '*' : operator.mul,
+        '%' : operator.mod,
+        '^' : operator.xor,
+        }[op]
+
+def basic_op(operator, value1, value2):
+    value1, value2 = int(value1), int(value2)
+    return get_operator_fn(operator)(value1, value2)
+    
+# 2)  or without using an external library you can easily build your own string math functions
+
+def basic_op(operator, value1, value2):
+    if operator=='+':
+        return value1+value2
+    if operator=='-':
+        return value1-value2
+    if operator=='/':
+        return value1/value2
+    if operator=='*':
+        return value1*value2
+        
+# 3) This is a really slick way using format and eval.
+def basic_op(operator, value1, value2): 
+    return eval("{}{}{}".format(value1, operator, value2))

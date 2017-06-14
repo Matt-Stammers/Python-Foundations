@@ -21,3 +21,8 @@ def sort_ascending(n): # Long winded way to do it
     for i in list_of_numbers:
         string = string + str(i)
     return int(string)
+
+def super_size(n): #another way to reverse a value
+    l = list(str(n))
+    l.sort()
+    return int( "".join( l[::-1] ) )

@@ -1,0 +1,11 @@
+The numbers are evil if it has an even number of 1's in it's binary expansion. Odious numbers have an odd number. These functions work this out!
+
+def evil(n): # Evil vs Odious
+    count_one = str(bin(n)).count('1')
+    if count_one % 2 == 0:
+        return "It's Evil!"
+    else:
+        return "It's Odious!"
+        
+def evil(n): # really quick way of doing it
+    return "It's %s!" % ["Evil","Odious"][bin(n).count("1")%2]

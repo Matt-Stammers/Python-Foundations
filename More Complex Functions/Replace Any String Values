@@ -1,0 +1,18 @@
+import re
+
+def replace_exclamation(s): # using re.sub to achieve a swap from vowels to !
+    return re.sub('[aeiouAEIOU]', '!', s)
+    
+def replace_exclamation(s): # as a list expression
+    return ''.join('!' if c in 'aeiouAEIOU' else c for c in s)
+    
+def replace_exclamation(s): #using a list and a for loop!!!
+    vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']
+    for a in s:
+        if a in vowels:
+            s = s.replace(a,'!')
+    print(s)
+    return s
+    
+def replace_exclamation(s): # or just using maketrans
+    return s.translate(s.maketrans('aeiouAEIOU', '!!!!!!!!!!'))

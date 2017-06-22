@@ -1,0 +1,23 @@
+# This is the simplest way that I used to solve this particular problem.
+
+from collections import Counter # an amazingly useful module
+
+def char_freq(message):
+    return collections.Counter(message)
+    
+def char_freq(message): # or without the external library
+    result = {}
+    for letter in message:
+        result[letter] = result.get(letter, 0) + 1
+    return result
+    
+def char_freq(message): # as a list expression
+    return { ch : message.count(ch) for ch in message }
+    
+def char_freq(message): # or a very clear but basic way to do it
+    pass
+    text = list(message)
+    dic = {}
+    for x in message:
+        dic[x] = text.count(x)
+    return dic

@@ -1,0 +1,10 @@
+Adding up the Unicode Value of strings:
+
+def uni_total(string): # 
+    acc = 0
+    for i in string:
+        acc += ord(i)
+    return acc
+
+uni_total('a') # will equal 97
+uni_total('gj') # will equal 209

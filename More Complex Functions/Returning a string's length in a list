@@ -1,0 +1,14 @@
+# this is my simple to read and easy solution to this problem
+
+def add_length(str_):
+    alist = str_.split()
+    blist = []
+    for w in alist:
+        blist.append(w + ' ' + str(len(w)))
+    return(blist)
+    
+def add_length(str_): # however this is the optimal way to do it
+    return ["{} {}".format(word, len(word)) for word in str_.split(' ')]
+    
+def add_length(s): # and this is just another way to do it, but the above is cleaner.
+    return ['%s %d' % (x, len(x)) for x in s.split()]

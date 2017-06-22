@@ -1,0 +1,22 @@
+Various ways to count the regex function in a string.
+
+import re
+def lowercase_counter(string):
+    return len(re.findall(r'[a-z]', string))
+    
+def lowercase_counter(string):
+    return sum(a.islower() for a in string)
+    
+def lowercase_count(strng): # a more long winded but easier to visualise way to do it.
+    
+    lowerCastCount = 0
+
+    for i in strng:
+
+        if i.isdigit():
+            None
+        else:
+            if i.islower():
+                lowerCastCount += 1
+
+    return lowerCastCount

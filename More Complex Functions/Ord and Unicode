@@ -1,0 +1,25 @@
+# Retrieving the unicode value of a string:
+
+def unicode(string):
+    return ord(string)
+
+unicode('a') # equals '97'
+unicode('e') # equals '101'
+unicode('i') # equals '105'
+unicode('o') # equals '111'
+unicode('u') # equals '117'
+
+# Adding up the Unicode Value of strings:
+
+def uni_total(string): # 
+    acc = 0
+    for i in string:
+        acc += ord(i)
+    return acc
+
+uni_total('a') # will equal 97
+uni_total('gj') # will equal 209
+
+
+def uni_total(string): # Does the same thing in just one line ;)
+    return sum(map(ord, string))

@@ -1,0 +1,20 @@
+# Sum of all positive only items in a list:
+
+def positive_sum(arr):
+    p = 0
+    for n in arr:
+        if n > 0:
+            p = p + n
+    return p
+    
+def positive_sum(arr): # quickest solution with a list expression
+    return sum(x for x in arr if x > 0)
+    
+def positive_sum(arr): # using filter and a lambda function
+    return sum(filter(lambda x: x > 0,arr))
+    
+def positive_sum(arr): # this is how one could squeeze in an else statement, however, this is not necessary all the time.
+    sum = 0
+    for b in arr:
+      sum += b if b>0 else 0
+    return sum

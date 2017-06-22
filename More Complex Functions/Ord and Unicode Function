@@ -8,3 +8,7 @@ def uni_total(string): #
 
 uni_total('a') # will equal 97
 uni_total('gj') # will equal 209
+
+
+def uni_total(string): # Does the same thing in just one line ;)
+    return sum(map(ord, string))

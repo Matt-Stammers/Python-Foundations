@@ -1,0 +1,14 @@
+# Say you wanted to chop out every second value in a list. This could be achieved simply by:
+
+def remove_every_other(my_list):
+    return my_list[::2]
+    
+# or say you wanted to return only every third item?:
+
+def remove_every_third(my_list):
+    return my_list[::3]
+    
+# and so on.
+
+def remove_every_other(my_list): # another way to remove every other would be this which has exactly the same effect, except that enumerate has to be used as well
+    return [v for c,v in enumerate(my_list) if not c%2]

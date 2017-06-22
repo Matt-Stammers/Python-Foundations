@@ -1,0 +1,12 @@
+# How to strip characters from the beginning or end of a string
+
+def remove_exclamations_right(s):
+    return s.rstrip('!')
+    
+def remove_backslash_left(s):
+    return s.lstrip('/')
+    
+# or using a Regex Pattern:
+import re
+def remover(s):
+    return re.sub('[!]+$','',s)

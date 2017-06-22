@@ -1,0 +1,12 @@
+def remover(s, n): # this simple code will remove any regex item to a particular count from a string. This is a useful cleaning function
+    return s.replace('!','', n)
+    
+    remove=lambda s,n:s.replace('!','',n)
+    
+    def remove(s, n):
+    while n and s.find('!') > -1:
+        temp = list(s)
+        temp.remove('!')
+        s = ''.join(temp)
+        n -= 1
+    return s

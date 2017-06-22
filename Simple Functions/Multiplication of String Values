@@ -1,0 +1,17 @@
+# To double all the strings in a string you could use:
+
+def double_char(s):
+    return ''.join([l*2 for l in s])
+    
+def double_char(s): # straightforward way to display it
+    string = ""
+    for character in s:
+        string += character + character
+    return string
+    
+def double_char(s):
+    s=list(str(s))
+    l=[]
+    for i in range(0,len(s)):
+        l+=[s[i]]+[s[i]]
+    return(''.join(l))

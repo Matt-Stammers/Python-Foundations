@@ -46,5 +46,5 @@ RPS = {('rock', 'rock'): 'Draw!',
        ('scissors', 'scissors'): 'Draw!'}
 
 
-def rps(p1, p2):
+def rock_paper_scissors(p1, p2):
     return RPS[(p1, p2)]

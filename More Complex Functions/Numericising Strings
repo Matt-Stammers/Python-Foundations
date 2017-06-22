@@ -1,0 +1,20 @@
+# This function will return '10101' at the same length of a string:
+
+def stringy(size): # using join
+    return "".join([str(i % 2) for i in range(1, size + 1)])
+    
+def stringy(size): # using slicing
+    return ('10' * size)[:size]
+    
+from itertools import cycle, islice
+def stringy(size): # using the itertools
+    return ''.join(islice(cycle('10'), size))
+    
+def stringy(size): # not as a list expression
+    s = ""
+    for x in range (0, size):
+        s+= str("1") if x%2 == 0 else str("0")
+    return s
+    
+def stringy(size):
+    return ''.join(['1' if a % 2 == 0 else '0' for a in range(size)])

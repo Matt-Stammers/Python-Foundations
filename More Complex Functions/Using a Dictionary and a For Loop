@@ -1,0 +1,35 @@
+# If you want to use a dict with a for loop there are several different options. This game fires the cannons only if all operators are ready.
+
+# This code comes from a simple game involving the following:
+
+def cannons_ready(gunners): # you must specify the values / keys in the loop for it to function
+  return 'Shiver me timbers!' if 'nay' in gunners.values() else 'Fire!'
+  
+def cannons_ready(gunners): # or you can use itervalues()
+    return 'Fire!' if all(a == 'aye' for a in gunners.itervalues()) else \
+        'Shiver me timbers!'
+        
+def cannons_ready(gunners): # or you can use .items()
+    return "Fire!" if all(s == "aye" for _, s in gunners.items()) else "Shiver me timbers!"
+    
+def cannons_ready(gunners): # The for loop can also be expressed like this.
+  for key, value in gunners.items():
+      if value != 'aye':
+          return 'Shiver me timbers!'
+  return 'Fire!'
+  
+def cannons_ready(gunners): # This will compare the lengths - a hacky way to do it really
+    if list(gunners.values()).count("aye") == len(gunners.values()):
+        return "Fire!"
+    else:
+        return "Shiver me timbers!"
+        
+def cannons_ready(gunners): # This is a much weaker way to do it.
+    flag = True
+        for a in gunners:
+            if gunners[a] == "nay" :
+                flag = False
+            if flag == True:
+                return "Fire!"
+            else:
+                return "Shiver me timbers!"

@@ -1,0 +1,50 @@
+# The age old classic. Solved easily using if/else filtering.
+
+def rock_paper_scissors(p1, p2):
+    if p1 == 'scissors' and p2 == 'paper':
+        return 'Player 1 won!'
+    elif p1 == 'scissors' and p2 == 'rock':
+        return 'Player 2 won!'
+    elif p1 == 'paper' and p2 == 'rock':
+        return 'Player 1 won!'
+    elif p1 == 'paper' and p2 == 'scissors':
+        return 'Player 2 won!'
+    elif p1 == 'rock' and p2 == 'scissors':
+        return 'Player 1 won!'
+    elif p1 == 'rock' and p2 == 'paper':
+        return 'Player 2 won!'
+    else:
+        return 'Draw!'
+        
+# However, this is not the best way to present the solution. It is much better to use a dictionary
+
+def rock_paper_scissors(p1, p2):
+    beats = {'rock': 'scissors', 'scissors': 'paper', 'paper': 'rock'}
+    if beats[p1] == p2:
+        return "Player 1 won!"
+    if beats[p2] == p1:
+        return "Player 2 won!"
+    return "Draw!"
+    
+# or even more elaborately it could be displayed like so, this is less readable but very clever
+
+def rock_paper_scissors(p1, p2):
+    hand = {'rock':0, 'paper':1, 'scissors':2}
+    results = ['Draw!', 'Player 1 won!', 'Player 2 won!']
+    return results[hand[p1] - hand[p2]]
+    
+# or you could write out the whole dictionary like this (this might be preferable where you have a large pre-existing database.
+
+RPS = {('rock', 'rock'): 'Draw!',
+       ('rock', 'paper'): 'Player 2 won!',
+       ('rock', 'scissors'): 'Player 1 won!',
+       ('paper', 'rock'): 'Player 1 won!',
+       ('paper', 'paper'): 'Draw!',
+       ('paper', 'scissors'): 'Player 2 won!',
+       ('scissors', 'rock'): 'Player 2 won!',
+       ('scissors', 'paper'): 'Player 1 won!',
+       ('scissors', 'scissors'): 'Draw!'}
+
+
+def rps(p1, p2):
+    return RPS[(p1, p2)]

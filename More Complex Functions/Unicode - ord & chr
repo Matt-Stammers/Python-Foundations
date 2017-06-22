@@ -1,0 +1,68 @@
+# Retrieving the unicode value of a string:
+
+def unicode(string):
+    return ord(string)
+
+unicode('a') # equals '97'
+unicode('e') # equals '101'
+unicode('i') # equals '105'
+unicode('o') # equals '111'
+unicode('u') # equals '117'
+
+# Adding up the Unicode Value of strings:
+
+def uni_total(string): # 
+    acc = 0
+    for i in string:
+        acc += ord(i)
+    return acc
+
+uni_total('a') # will equal 97
+uni_total('gj') # will equal 209
+
+
+def uni_total(string): # Does the same thing in just one line ;)
+    return sum(map(ord, string))
+
+# this will find the vowel and extract it from the unicode:
+
+def is_vow(inp):
+    return [chr(n) if chr(n) in "aeiou" else n for n in inp]
+    
+def is_vow(s): # or you could spell it out in a dictionary
+    vowels = {97: 'a', 111: 'o', 117: 'u', 101: 'e', 105: 'i'}
+    return [vowels.get(a, a) for a in s]
+    
+def is_vow(inp): # or as an enumeration
+    for i, v in enumerate(inp):
+        if chr(v) in 'aeiou':
+            inp[i] = chr(v)
+    return inp
+    
+def is_vow(inp): # using .index
+    for n in inp:
+        if n==97 or n==101 or n==105 or n ==111 or n==117:
+            i = inp.index(n)
+            inp[i] = chr(n)
+    return inp
+    
+def is_vow(inp): # in a very long filter
+    vowel = "aeiou"
+    for i,item in enumerate(inp):
+        if isinstance(i,int):
+            if chr(item).isalpha():
+                if chr(item).islower():
+                    if chr(item) in vowel:
+                        inp[i] = chr(item)
+    
+    return inp
+    
+def is_vow(inp): # using .append()
+    y=[]
+    c=(97,101,105,111,117)
+    for x in inp:
+        if x in c:
+            y.append(chr(x))
+        else:
+            y.append(x)
+    return y

@@ -21,3 +21,11 @@ def char_freq(message): # or a very clear but basic way to do it
     for x in message:
         dic[x] = text.count(x)
     return dic
+    
+def char_freq(message): # using an if filter
+    chars, counts = list(), list()
+        for c in message:
+            if c not in chars:
+                chars.append(c)
+                counts.append(message.count(c))
+    return dict(zip(chars, counts))

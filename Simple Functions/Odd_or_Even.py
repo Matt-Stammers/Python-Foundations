@@ -26,3 +26,5 @@ def lovefunc(a, b): # this is a less good way to solve it
         return True
     else:
         return False
+
+lovefunc = lambda x, y: x % 2 != y % 2 # as a lambda

@@ -1,0 +1,56 @@
+# This challenge is to do with turning an integer for float into dollars and cents using a function.
+
+def format_money(amount): # this is a very clear way of presenting it
+    float_amount = float(amount) # this is not strictly necessary if they are already float values which they commonly are
+    two_dec_places = format(float_amount, '.2f')
+    return ''.join('$'+str(two_dec_places))
+    
+# these are shorthand ways to do it.
+
+def format_money(amount):
+    return '$%0.2f' % amount
+    
+def format_money(amount):
+  return "$" + "%.2f" % amount
+    
+def format_money(amount):
+    return '${:.2f}'.format(amount)
+    
+format_money = lambda x: '${:.2f}'.format(x)
+
+def format_money(amount): # or using round()
+    return "$%.2f" % round(amount,2)
+    
+# and these are some crazy ways to do it:
+
+def format_money(amount):
+    if type(amount) == int:
+        amount = str(amount) + '.'
+    left = str(amount).split('.')[0]
+    right = str(amount).split('.')[1]
+    if len(right) < 2:
+        return '$' + left + '.' + right.ljust(2, '0')
+    return '$' + str(amount)
+        
+def format_money(amount):
+    it = str(amount)
+    it = "$"+it
+    per = it.find(".")
+    le = len(it)
+    dec = le-per-1
+    print (it,dec)
+    if dec==1:
+        it = it+"0"
+    if dec==0:
+        it=it+"00"
+    if per==-1:
+        it = it+".00"
+    return it
+    
+def format_money(amount):
+    amount = str(amount)
+    if '.' in amount:
+        a = amount.split('.')
+        return '${0}.{1:0<2}'.format(a[0], a[1])
+    else:
+        return '${0}.00'.format(amount)

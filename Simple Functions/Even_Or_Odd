@@ -1,0 +1,10 @@
+# This is an incredibly simple function which returns Even or Odd
+
+def even_or_odd(number): # This version is acceptible. 
+    if number % 2 == 0:
+        return "Even"
+    elif number % 2 == 1:
+        return "Odd"
+
+def even_or_odd(number): # This is an even quicker version.
+    return 'Odd' if number % 2 else 'Even'

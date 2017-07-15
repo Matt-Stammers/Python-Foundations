@@ -1,0 +1,27 @@
+# Calculates the bonus and returns value as a concatenated string - my solution.
+
+def bonus_time(salary, bonus):
+    if bonus == True:
+        return "".join("$" + str(salary * 10))
+    else: 
+        return "".join("$" + str(salary))
+        
+# using .format{}
+
+def bonus_time(salary, bonus):
+    return "${}".format(salary * (10 if bonus else 1))
+    
+# a clever way to do it
+
+def bonus_time(salary, bonus):
+    return '$' + str(salary * [1,10][bonus])
+    
+# another way to do it with a lambda
+
+bonus_time = lambda salary, bonus: '${}'.format(salary * 10 if bonus else salary) 
+
+# or more easy to read
+
+def bonus_time(salary, bonus):
+    pay = salary * 10 if bonus == True else salary
+    return '$' + str(pay)

@@ -54,3 +54,9 @@ def remove(s):
                 new_str += char
         new_str += "!"
     return new_str
+
+# it can even be done like this without re ( a very simple way )
+
+def remove(s):
+    newstr = s.replace("!", "")
+    return newstr +'!'

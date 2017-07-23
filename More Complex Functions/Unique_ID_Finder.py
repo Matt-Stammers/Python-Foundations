@@ -1,4 +1,4 @@
-# Best to use a while loop.
+# Simplest way if using an ascending array which you are trying to fill is to use a while loop
 
 def next_id(arr):    
     t = 0

@@ -16,3 +16,63 @@ def replace_exclamation(s): #using a list and a for loop!!!
     
 def replace_exclamation(s): # or just using maketrans
     return s.translate(s.maketrans('aeiouAEIOU', '!!!!!!!!!!'))
+
+# or say you are tryingt to return 'sex' in the place of every word in a sentence.
+# on way to do this would be:
+
+import re
+
+def to_freud(sentence):
+    split_sentence = sentence.split(' ')
+    print(split_sentence)
+    length = len(split_sentence)
+    slip = 1 * 'sex'
+    lengths = length - 1
+    total = slip + (lengths * ' sex')
+    print(total)
+    return total
+    
+# but let's face it this is a bit of a mess.   
+   
+def to_freud(sentence):
+    split_sentence = sentence.split(' ')
+    print(split_sentence)
+    for word in split_sentence:
+        freud = word.replace(word, 'sex')
+        print(freud)
+        freud_string = str(freud)
+        print(freud_string)
+        return freud_string
+        
+# This code doesn't quite work as it returns no gaps in the correct places.
+
+# The best way to solve this problem is:
+
+def to_freud(sentence):
+    return ' '.join('sex' for _ in sentence.split())
+    
+#or
+
+def to_freud(s):
+    return (len(s.split()) * "sex ").strip()
+    
+def to_freud(sentence):
+    words = sentence.split()
+    wordcount = len(words)
+    s = ""
+    while wordcount > 0:
+        s = s + "sex "
+        wordcount -= 1
+    return s[:-1]
+    
+def to_freud(sentence):
+  sentence = sentence.split()
+  sentence = ["sex" for i in range(len(sentence))]
+  sentence = " ".join(sentence)
+  return sentence
+  
+# or using Re:
+  
+def to_freud(sentence):
+    import re
+    return re.sub('\S+','sex',sentence)

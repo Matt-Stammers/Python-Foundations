@@ -1,14 +1,15 @@
-# This is based on the collaz collective
+# This is based on the collaz collective - a tricky mathematical problem.
 
 def hotpo(n):
-    count = 0
-    if n == 1:
-        return count
-    else:
-        while n % 2 == 0:
-            count =+ count
-            return n/2
-        while n % 2 == 1:
-            count =+ count
-            return (n*3)+1
+    iterations = 0
+    while n != 1:
+        (n*3)+1 if n%2 else n/2
+        iterations += 1
+    return iterations
     
+def hotpo(n):
+    cnt = 0
+    while n != 1:
+        n = 3 * n + 1 if n % 2 else n / 2
+        cnt += 1
+    return cnt

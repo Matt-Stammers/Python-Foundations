@@ -95,7 +95,7 @@ print(mycirc.area())
 
 # or
 
-class Circle():
+class Animal():
   
   pi = 3.14
   
@@ -110,3 +110,75 @@ class Circle():
     
 mycirc.set_radius(500)
 print(mycirc.area())
+
+# inheritance: This is where a base class -> derived classes and it saves time and code:
+
+class Creature():
+  
+  def __init__(self):
+    print("A CREATURE WAS CREATED")
+    
+  def whoIAm(self):
+    print("CREATURE")
+    
+  def eat(self):
+    print("EATING")
+    
+myCreat = Creature()
+myCreat.whoIAm()
+myCreat.eat()
+
+# so this will print "A CREATURE WAS CREATED", "CREATURE" and "EATING" to the console
+# but how can we 'inherit' from this base class?
+
+class Cat(Creature):
+  
+  def __init__(self):
+    Creature.__init__(self)
+    print("CAT CREATED")
+    
+myCat2 = Cat()
+myCat2.whoIAm()
+myCat2.eat()
+
+# now it adds "CAT CREATED" to the list and the new class has now inherited the methods from the base class ;)
+# you can then add more and more attributes to the new class. Be aware that the new class can override the old one
+
+# ok so special methods now
+
+class Story():
+  def __init__(self, title, author, chapters) # init is a method that initialises the object
+    self.title = title
+    self.author = author
+    self.chapters = chapters
+    
+    
+  def __str__(self): # this is the string representation method
+    return "Title: {}, Author: {}, Chapters: {}".format(self.title, self.author, self.chapters)
+  
+s = Story("Clin_Dev", "Matt", 10) # note, as long as the order is the same you don't actually have to specify the attributes
+print(s)
+
+# voila, this now works, but without the __str__ method it won't work
+# ok so now for __len__
+
+class Story():
+  def __init__(self, title, author, chapters) # init is a method that initialises the object
+    self.title = title
+    self.author = author
+    self.chapters = chapters
+    
+  def __str__(self): # this is the string representation method
+    return "Title: {}, Author: {}, Chapters: {}".format(self.title, self.author, self.chapters)
+  
+  def __len__(self): # this is the len method
+    return self.chapters
+  
+s = Story("Clin_Dev", "Matt", "10") # note, as long as the order is the same you don't actually have to specify the attributes
+print(len(s)) # without the __len__ method this won't work
+
+"""
+there are literally hundreds of these methods, you just need to know about them so you can go looking for them
+well done. This concludes the intro to OOP in Python! See your well on your way
+to becoming a true Pythonista!! ;)
+"""

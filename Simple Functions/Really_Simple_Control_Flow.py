@@ -20,3 +20,12 @@ def checkAlive(health):
     return health > 0
     
 # woah, how much better is that!!! mind = blown ;)
+
+# or consider a simple grading system: This can also be collapsed as follows:
+
+def grader(x):
+  if 0.9 <= x <= 1: return "A"
+  elif 0.8 <= x < 0.9: return "B"
+  elif 0.7 <= x < 0.8: return "C"
+  elif 0.6 <= x < 0.7: return "D"
+  else: return "F"

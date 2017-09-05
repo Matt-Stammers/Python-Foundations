@@ -58,4 +58,16 @@ class Woman(Human):
     pass
 
 # Ok now let's try a fictional Pirate Ship - Ahoy!!!
+# This one will board the ship if the ship is more than 20 units cargo than crew. It assumes that crew weigh 1.5 units each.
 
+class Ship:
+    def __init__(self, draft, crew):
+        self.draft = draft
+        self.crew = crew
+        
+    def is_worth_it(self):
+        self.cargo = self.draft - self.crew * 1.5
+        if self.cargo > 20:
+            return True
+        else:
+            return False

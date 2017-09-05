@@ -71,3 +71,17 @@ class Ship:
             return True
         else:
             return False
+
+# you could then add a rankUp feature to the game to make it more interesting say if more than a certain amount of points are gained.
+
+class player:
+    def __init__(self):
+        self.rank = 0
+    
+def playerRankUp(pts):
+    try:
+        plr()
+    except:
+        plr = player()
+    plr.rank += pts
+    return "Well done! You have advanced to the qualifying stage. Win 2 out of your next 3 games to rank up." if plr.rank>99 else False

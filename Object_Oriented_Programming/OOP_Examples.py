@@ -43,5 +43,19 @@ class Cat(Animal):
     def speak(self):
         return '{} meows.'.format(self.name)
         
+# Here is a very simple example of inheritance - Man() and Woman() both inherit from Human() - they inherit nothing in this case, but if there was anything to inherit they would inherit it.
 
+def God():
+    return [Man(), Woman()]
+
+class Human(object):
+    pass
+
+class Man(Human):
+    pass
+    
+class Woman(Human):
+    pass
+
+# Ok now let's try a fictional Pirate Ship - Ahoy!!!
 

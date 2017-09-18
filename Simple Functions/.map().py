@@ -5,7 +5,7 @@ def maps(a):
     
 # or as a lambda
 
-maps=lambda a:[n*2for n in a]
+maps=lambda a:[n*2 for n in a]
 
 # but one can also use the .map method
 

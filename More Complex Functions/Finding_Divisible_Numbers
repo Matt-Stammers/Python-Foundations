@@ -1,0 +1,10 @@
+# various options:
+
+def divisible_by(numbers, divisor):
+	return list([num for num in numbers if num % divisor == 0])
+  
+def divisible_by(numbers, divisor):
+    return list(filter(lambda x: x%divisor == 0, numbers))
+  
+def divisible_by(n,d):
+    return filter(lambda x:x % d == 0, n)

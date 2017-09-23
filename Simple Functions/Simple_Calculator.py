@@ -36,3 +36,17 @@ def calculator(x,y,op):
         '*': x * y,
         '/': x / y
     }.get(op, 'unknown value')
+
+# there are so many ways to handle the error:
+
+def calculator(x,y,op):
+    if not str(x).isdigit() or not str(y).isdigit() or not op in ['+', '-', '*', '/']:
+        return "unknown value"
+    if op == '+':
+        return x + y
+    elif op == '-':
+        return x - y
+    elif op == '*':
+        return x * y
+    elif op == '/':
+        return x / y

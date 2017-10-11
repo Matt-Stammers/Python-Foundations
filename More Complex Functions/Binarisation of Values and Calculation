@@ -9,3 +9,21 @@ def evil(n): # Evil vs Odious
         
 def evil(n): # really quick way of doing it
     return "It's %s!" % ["Evil","Odious"][bin(n).count("1")%2]
+
+# or:
+
+def bin_to_decimal(inp):
+    return int(inp, 2)
+    
+def bin_to_decimal(inp):
+    num = 0
+    inp = inp[::-1]
+    for i in range(len(inp)):
+        num += int(inp[i]) * 2 ** i
+    return num
+    
+def bin_to_decimal(inp):
+    return int('0b'+inp, 0)
+    
+def bin_to_decimal(s):
+    return sum((2 ** i) * int(d) for i, d in enumerate(reversed(s)))

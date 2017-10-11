@@ -1,0 +1,24 @@
+# say you have multiple arguments you want to insert into a .format() string:
+
+def build_string(*args):
+    return "I like {}!".format(", ".join(args))
+    
+Test.assert_equals(build_string('Cheese','Milk','Chocolate'), 'I like Cheese, Milk, Chocolate!', 'Return the correct String')
+Test.assert_equals(build_string('Cheese','Milk'), 'I like Cheese, Milk!', 'Return the correct String')
+Test.assert_equals(build_string('Chocolate'), 'I like Chocolate!', 'Return the correct String')
+
+# or 
+
+def build_string(*args):
+    return "I like {1}!".format("{1}", ", ".join(args)
+    
+# or:
+
+def build_string(*args):
+    args_list = ', '.join(args)
+    return "I like {}!".format(args_list)
+    
+# or:
+
+def build_string(*args):
+    return 'I like ' + ', '.join(list(args)) + '!'

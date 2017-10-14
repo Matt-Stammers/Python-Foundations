@@ -56,7 +56,3 @@ DVT_score = question_function(DVT_score, "Alternative diagnosis just as likely o
 
 print("The Full DVT Wells score is: {}".format(DVT_score))
 print(DVT_scorer(DVT_score))
-
-
-print("The Full DVT Wells score is: {}".format(DVT_score))
-print(DVT_scorer(DVT_score))
